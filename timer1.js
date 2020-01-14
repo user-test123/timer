@@ -1,8 +1,10 @@
 // process.stdout.write('\x07');
-const [, , ...argv] = process.argv;
+// const [, , ...argv] = process.argv;
+
+const time = process.argv.splice(2);
 
 const timer = () => {
-  for (let pause of argv) {
+  for (let pause of time) {
     setTimeout(() => {
       console.log(pause, " seconds");
       process.stdout.write("\x07");
