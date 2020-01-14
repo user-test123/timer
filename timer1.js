@@ -6,8 +6,10 @@ const time = process.argv.splice(2);
 const timer = () => {
   for (let pause of time) {
     setTimeout(() => {
-      console.log(pause, " seconds");
-      process.stdout.write("\x07");
+      if (pause > 0) {
+        console.log(pause, " seconds");
+        process.stdout.write("\x07");
+      }
     }, pause * 1000);
   }
 };
